@@ -1,5 +1,5 @@
 # Kube for Rails 3.1 Asset Pipeline
-[Kube](http://imperavi.com/kube/) is a minimal CSS-framework for developers.
+[Kube](http://imperavi.com/kube/) is a minimal CSS-framework for developers. This projects integrates it for Rails 3.1 Asset Pipeline.
 
 [![Build Status](https://secure.travis-ci.org/mmozuras/kube-rails.png)](http://travis-ci.org/mmozuras/kube-rails)
 
@@ -11,17 +11,13 @@ Include the [Kube Rails gem](http://rubygems.org/gems/kube-rails) in Gemfile to 
 gem "kube-rails"
 ```
 
-You can run bundle from command line
+Then run ```bundle install``` from the command line.
 
-    bundle install
-
-## Installing to App (using Generators)
+## Using Generators
 
 You can run following generators to get started with Kube quickly.
 
-
 Install (requires directives to Asset pipeline.)
-
 
 Usage:
 
