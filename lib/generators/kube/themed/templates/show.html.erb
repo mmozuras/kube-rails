@@ -3,8 +3,8 @@
 
 <dl>
   <%- columns.each do |column| -%>
-    <dt class="bold"><%%= model_class.human_attribute_name(:<%= column.name %>) %>:</dt>
-    <dd><%%= @<%= resource_name %>.<%= column.name %> %></dd>
+  <dt class="bold"><%%= model_class.human_attribute_name(:<%= column.name %>) %>:</dt>
+  <dd><%%= @<%= resource_name %>.<%= column.name %> %></dd>
   <%- end -%>
 </dl>
 

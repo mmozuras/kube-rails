@@ -6,7 +6,7 @@
     <tr>
       <th><%%= model_class.human_attribute_name(:id) %></th>
       <%- columns.each do |column| -%>
-        <th><%%= model_class.human_attribute_name(:<%= column.name %>) %></th>
+      <th><%%= model_class.human_attribute_name(:<%= column.name %>) %></th>
       <%- end -%>
       <th><%%= model_class.human_attribute_name(:created_at) %></th>
       <th>Actions</th>
@@ -17,7 +17,7 @@
       <tr>
         <td><%%= link_to <%= resource_name %>.id, <%= singular_controller_routing_path %>_path(<%= resource_name %>) %></td>
         <%- columns.each do |column| -%>
-          <td><%%= <%= resource_name %>.<%= column.name %> %></td>
+        <td><%%= <%= resource_name %>.<%= column.name %> %></td>
         <%- end -%>
         <td><%%=l <%= resource_name %>.created_at %></td>
         <td>
