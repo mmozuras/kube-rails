@@ -1,0 +1,18 @@
+<%%- model_class = <%= model_class %> -%>
+<h1><%%= model_class.model_name.human %></h1>
+
+<dl>
+  <%- columns.each do |column| -%>
+    <dt class="bold"><%%= model_class.human_attribute_name(:<%= column.name %>) %>:</dt>
+    <dd><%%= @<%= resource_name %>.<%= column.name %> %></dd>
+  <%- end -%>
+</dl>
+
+<div>
+  <%%= link_to 'Back', <%= controller_routing_path %>_path, :class => 'btn'  %>
+  <%%= link_to 'Edit', edit_<%= singular_controller_routing_path %>_path(@<%= resource_name %>), :class => 'btn' %>
+  <%%= link_to 'Destroy', <%= singular_controller_routing_path %>_path(@<%= resource_name %>),
+              :method => 'delete',
+              :data => { :confirm => 'Are you sure?' },
+              :class => 'btn' %>
+</div>
