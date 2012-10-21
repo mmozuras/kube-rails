@@ -15,10 +15,24 @@ Then run ```bundle install``` from the command line.
 
 ## Using Generators
 
-You can run following generators to get started with Kube quickly.
+#### Install
 
-Install (requires directives to Asset pipeline.)
+Installs Kube to Asset Pipeline.
 
 Usage:
 
     rails g kube:install
+
+#### Themed
+
+Generate Kube compatible scaffold views. Support for Haml and Slim is available.
+
+Usage:
+
+    rails g kube:themed [RESOURCE]
+
+Example:
+
+    rails g scaffold Post title:string description:text
+    rake db:migrate
+    rails s kube:themed Posts
