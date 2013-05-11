@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/mmozuras/kube-rails"
   s.summary     = %q{Kube for Rails 3.1 Asset Pipeline}
   s.description = %q{kube-rails project integrates Kube for Rails 3.1 Asset Pipeline}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "kube-rails"
   s.files = Dir["lib/**/*"] + Dir["vendor/**/*"] + ["Rakefile", "README.md"]
