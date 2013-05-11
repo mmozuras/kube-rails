@@ -5,14 +5,14 @@
 	margin-bottom: 2px;
 }
 .descr {
-	color: @colorGrayLight; 
-	font-size: @smallFontSize; 
+	color: @colorGrayLight;
+	font-size: @smallFontSize;
 	line-height: @baseLine/@em;
 }
 div.descr {
 	margin: 4px 0;
 }
-.columnar div.descr { 
+.columnar div.descr {
 	margin-bottom: 10px;
 }
 .forms ul {
@@ -34,13 +34,13 @@ fieldset.liner {
 fieldset.liner legend {
 	padding: 0;
 	width: 100%;
-	padding-bottom: 12px;		
+	padding-bottom: 12px;
 }
 fieldset.liner legend span {
 	padding: 0;
 	padding-bottom: 8px;
 	border-bottom: 1px solid #eee;
-	display: block;	
+	display: block;
 }
 /* multicolumn */
 .forms ul.multicolumn {
@@ -61,7 +61,7 @@ fieldset.liner legend span {
 }
 .forms ul.multicolumn li.width-33 {
 	width: 31%;
-	margin-right: 2%;	
+	margin-right: 2%;
 }
 /* columnar */
 .forms.columnar legend {
@@ -73,7 +73,8 @@ fieldset.liner legend span {
 	text-align: right;
 	margin-right: @columnarMargin;
 }
-.forms.columnar .push, .forms.columnar div.descr {
+.forms.columnar .push,
+.forms.columnar div.descr {
 	margin-left: @columnarWidth + @columnarMargin;
 }
 .forms.columnar li fieldset label {
@@ -140,7 +141,9 @@ input[type="checkbox"] {
 
 input[type="text"],
 input[type="password"],
-input[type="email"], 
+input[type="email"],
+input[type="url"],
+input[type="phone"],
 textarea {
 	position: relative;
 	z-index: 2;
@@ -151,51 +154,61 @@ textarea {
 	padding: 1px 2px;
 	background-color: white;
 	color: #333;
-	font-size: 13px;
+	font-size: .95em;
 	line-height: 1;
 	border-radius: 1px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;	
-	.transition(border .3s ease-in);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1) inset;
+	.transition(border ease .5s);
 }
 textarea {
 	line-height: 1.4em;
 }
 
 /* Errors and Success */
-.error, 
-.success { 
-	margin-left: 5px; 
-	font-weight: normal; 
-	font-size: @smallFontSize; 
+.error,
+.success {
+	margin-left: 5px;
+	font-weight: normal;
+	font-size: @smallFontSize;
 }
-input.input-error, textarea.input-error, select.input-error, .input-error {
+input.input-error,
+textarea.input-error,
+select.input-error,
+.input-error {
 	border-color: #da3e5a;
-	box-shadow: 0 0 0 2px rgba(218, 62, 90, .3),0 1px 2px rgba(0, 0, 0, .2) inset;  
-
+	box-shadow: 0 0 0 2px rgba(218, 62, 90, .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
-input.input-success, textarea.input-success, select.input-success, .input-success  {
+input.input-success,
+textarea.input-success,
+select.input-success,
+.input-success  {
 	border-color: #18a011 ;
-	box-shadow: 0 0 0 2px rgba(24, 160, 17, .3),0 1px 2px rgba(0, 0, 0, .2) inset;  
+	box-shadow: 0 0 0 2px rgba(24, 160, 17, .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
-input.input-gray, textarea.input-gray, select.input-gray, .input-gray  {
+input.input-gray,
+textarea.input-gray,
+select.input-gray,
+.input-gray {
 	border-color: #ccc;
-	box-shadow: 0 0 0 2px rgba(204, 204, 204, .3),0 1px 2px rgba(0, 0, 0, .2) inset;  
+	box-shadow: 0 0 0 2px rgba(204, 204, 204, .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
 	outline: none;
 	border-color: #5ca9e4;
-	box-shadow: 0 0 0 2px rgba(70, 161, 231, .3), 0 1px 2px rgba(0, 0, 0, .2) inset; 	
-
-	
+	box-shadow: 0 0 0 2px rgba(70, 161, 231, .3), 0 1px 2px rgba(0, 0, 0, .2) inset;
 }
-input.input-search, input[type="search"] {
+
+input.input-search,
+input[type="search"] {
 	padding-right: 10px;
 	padding-left: 10px;
 	margin-bottom: 0;
 	border-radius: 15px;
 }
-.input-append, .input-prepend {
+.input-append,
+.input-prepend {
 	display: inline-block;
 	background-color: #eee;
 	height: 23px;
@@ -203,7 +216,7 @@ input.input-search, input[type="search"] {
 	margin: 0;
 	padding: 1px 8px;
 	color: #333;
-	font-size: 14px;
+	font-size: 1em;
 	line-height: 23px;
 }
 .input-prepend {
@@ -216,4 +229,19 @@ input.input-search, input[type="search"] {
 	margin-left: -1px;
 }
 
-
+/* Placeholders */
+::-webkit-input-placeholder {
+   color: @colorGrayLight;
+   padding: 1px 2px;
+}
+/* FF19+ */
+::-moz-placeholder {
+   color: @colorGrayLight;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+   color: @colorGrayLight;
+}
+:-ms-input-placeholder {
+   color: @colorGrayLight;
+}

@@ -1,88 +1,67 @@
-.btn {
-	position: relative;
-	cursor: pointer;
-	outline: none;
-	display: inline-block;
-	text-align: center;
-	text-decoration: none;
-	font-family: Arial, Helvetica, sans-serif;
-	line-height: 1;
-	font-size: 13px;
-	font-weight: normal;
-	padding: 6px 16px;
-	border-radius: 4px;		
 
-	.gradient(#fff, #e1e1e1);
-	border: 1px solid #dadada;	
-	border-left: 1px solid #d2d2d2;	
-	border-right: 1px solid #d2d2d2;			
-	border-bottom-color: #a9a9a9;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, .15), inset 0 1px 1px 0 rgba(255, 255, 255, 0.6);	
-	text-shadow: 0 1px 0px rgba(255, 255, 255, 1);
-}
-.btn, .btn:hover {
+.btn {
+	text-decoration: none;
 	color: #000;
+	border-radius: 2px;
+	font-family: 'Helvetica Neue', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	border: 1px solid #ccc;
+	padding: .5em 1.05em;
+	font-weight: 500;
+	font-size: .85em;
+	background: #f3f2f2;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f3f2f2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f2f2));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f3f2f2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f2f2',GradientType=0 );
 }
 .btn:hover {
-	filter: none;
-	background: none;
-	background: #eee;
-	text-shadow: 0 1px 0px rgba(255, 255, 255, .8);		
-	text-decoration: none;
-	box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
+	background: #fff;
+	border: 1px solid #ddd;
 }
-
-
-/* Active  */
-.btn-big.btn-active, .btn-big.btn-active:hover {
-	padding: 11px 25px;
-}
-.btn-active, .btn-active:hover {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, .4) inset;	
-	color: #555;
-	border: none;
-	background: none;
-	filter: none;
-	background-color: #ddd;	
-	text-shadow: 0 1px 0px rgba(255, 255, 255, .8);
-	padding: 7px 17px 8px 17px;
-}
-
-
-/* Small */
 .btn-small {
-	padding: 4px 12px;
-	font-size: 11px;
+	font-size: .7em;
 }
-.btn-small.btn-active {
-	padding: 5px 12px;
-}
-
-/* Big */
 .btn-big {
-	padding: 10px 24px;
-	font-size: 20px;
+	font-size: 1.2em;
 }
-
-
-/* Square */
-.btn-square {
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;	
-}
-
-/* Round */
 .btn-round {
-	border-radius: 15px;		
-	border-radius: 0 \0; /* ie9 hack */ 
+	border-radius: 20px;
 }
-
-/* Full */
 .btn-full {
 	width: 100%;
 }
+.btn-active,
+.btn-active:hover,
+.btn.disabled,
+.btn[disabled]
+.btn-disabled,
+.btn-disabled:hover {
+	background: #e3e3e3;
+	border: 1px solid #ccc;
+	text-shadow: 0 1px 1px #fff;
+}
+.btn-active,
+.btn-active:hover {
+	color: #666;
+}
+.btn.disabled,
+.btn[disabled]
+.btn-disabled,
+.btn-disabled:hover {
+	color: #999;
+}
 
+.btn:focus .halflings,
+.btn:hover .halflings {
+	color: @colorGrayDark;
+}
+
+.btn-active .halflings {
+	color: #555;
+}
 
 /* Group  */
 .btn-group {
@@ -91,23 +70,26 @@
 	.clearfixing();
 	vertical-align: bottom;
 }
-.btn-group > .btn, .btn-group > input {
+.btn-group > .btn,
+.btn-group > input {
 	float: left;
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	margin-left: -1px;	
+	margin-left: -1px;
 }
 .btn-group > .btn:first-child {
-	border-radius: 4px 0 0 4px;	
+	border-radius: 4px 0 0 4px;
 }
 .btn-group > .btn:last-child {
 	border-radius: 0 4px 4px 0;
 }
-.btn-group > .btn.btn-round:first-child, .btn-group > .input-search:first-child {
-	border-radius: 15px 0 0 15px;	
+.btn-group > .btn.btn-round:first-child,
+.btn-group > .input-search:first-child {
+	border-radius: 15px 0 0 15px;
 }
-.btn-group > .btn.btn-round:last-child, .btn-group > .input-search:last-child {
+.btn-group > .btn.btn-round:last-child,
+.btn-group > .input-search:last-child {
 	border-radius: 0 15px 15px 0;
 }
 
@@ -117,20 +99,6 @@
 	margin-left: -2px;
 	border-radius:  0 4px 4px 0;
 }
-
-
-/* Disabled  */
-.btn.disabled, 
-.btn[disabled] {
-	border: none;
-	filter: none;	
-	background: none;
-	background-color: #e9e9e9;
-	opacity: 0.6; 
-	cursor: default; 
-	box-shadow: 0 1px 0 rgba(0, 0, 0, .6);	
-}
-
 
 /* FF fix */
 @-moz-document url-prefix("http://") {

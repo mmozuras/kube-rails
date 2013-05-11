@@ -1,40 +1,41 @@
-/* =Responsive Mobile (Portrait)
+/* =Responsive Mobile
 -----------------------------------------------------------------------------*/
 @media only screen and (max-width: 767px) {
 
 	.row .half,
-	.row .third, 
-	.row .quarter, 
-	.row .fifth, 
-	.row .sixth, 
-	.row .twothird, 
-	.row .twofifth, 
-	.row .threefifth, 
-	.row .fourfifth, 
+	.row .third,
+	.row .quarter,
+	.row .fifth,
+	.row .sixth,
+	.row .twothird,
+	.row .twofifth,
+	.row .threefifth,
+	.row .fourfifth,
 	.row .fivesixth,
-	.row .threequarter {	
-		margin-left: 0;	
+	.row .threequarter {
 		width: 100%;
+		margin-left: 0;
+		margin-bottom: 1.5em;
 	}
-	
-	.push-half, 
-	.push-threequarter, 
-	.push-quarter, 
-	.push-third, 
-	.push-twothird, 
-	.push-fifth, 
-	.push-twofifth, 
-	.push-threefifth, 
-	.push-fourfifth, 
-	.push-sixth, 
-	.push-fivesixth { 
-		left: 0; 
-	}	
-	
-	.row .pull-right {	
+
+	.push-half,
+	.push-threequarter,
+	.push-quarter,
+	.push-third,
+	.push-twothird,
+	.push-fifth,
+	.push-twofifth,
+	.push-threefifth,
+	.push-fourfifth,
+	.push-sixth,
+	.push-fivesixth {
+		left: 0;
+	}
+
+	.row .pull-right {
 		float: none;
 	}
-	
+
 	/*
 		Blocks
 	*/
@@ -46,36 +47,41 @@
 		margin-left: 0;
 		margin-bottom: @baseLine/@em;
 	}
-	
+
 	.block-two > li,
 	.block-three > li,
 	.block-four > li,
 	.block-five > li,
-	.block-six > li { 
+	.block-six > li {
 		float: none;
-		margin: 0;	
+		margin: 0;
 		width: 100%;
-	}	
+	}
 
 	/*
 		Forms
 	*/
-	.forms.columnar label { 
+	.forms.columnar label {
 		float: none;
 		text-align: left;
 		width: auto;
 	}
-	.forms.columnar .push, .forms.columnar div.descr {
+	.forms.columnar .push,
+	.forms.columnar div.descr {
 		margin-left: 0;
 	}
 	.forms .multicolumn li {
 		float: none;
 		margin-right: 0;
 	}
-	.forms .multicolumn li.width-50, .forms .multicolumn li.width-33 {	
+	.forms .multicolumn li.width-50,
+	.forms .multicolumn li.width-33 {
 		width: 100%;
 	}
-	.forms.columnar li fieldset, .forms.columnar li fieldset section {
+	.forms.columnar li fieldset,
+	.forms.columnar li fieldset section,
+	.forms.columnar li fieldset section label,
+	.columnar li.form-section {
 		width: 100%;
 		padding-left: 0;
 		text-align: left;
@@ -88,6 +94,32 @@
 	}
 	.forms fieldset legend {
 		padding: 0;
+	}
+
+	/*
+		Navs
+	*/
+	.nav-g, .nav-g ul,
+	.nav-g ul li,
+	.nav-g,
+	.nav-v ul,
+	.nav-v,
+	.nav-tabs ul,
+	.nav-pills,
+	.nav-pills ul {
+		float: none;
+	}
+	.nav-g ul li {
+		margin: 0;
+		margin-bottom: 1px;
+	}
+	.nav-tabs ul li {
+		float: none;
+	}
+	.nav-tabs ul li a,
+	.nav-tabs ul li span {
+		margin-top: 0;
+		bottom: 0;
 	}
 
 }

@@ -7,7 +7,8 @@
 .container.row {
 	margin-bottom: 0;
 }
-.container:after, .row:after {
+.container:after,
+.row:after {
   content: ".";
   display: block;
   height: 0;
@@ -15,40 +16,40 @@
   visibility: hidden;
 }
 
-.half, 
-.third, 
-.quarter, 
-.fifth, 
-.sixth, 
-.twothird, 
-.twofifth, 
-.threefifth, 
-.fourfifth, 
+.half,
+.third,
+.quarter,
+.fifth,
+.sixth,
+.twothird,
+.twofifth,
+.threefifth,
+.fourfifth,
 .fivesixth,
 .threequarter {
 	margin-left: @gridGutterWidth/(@gridWidth/100)*1%;
 	float: left;
 	min-height: 1px;
 }
-.half:first-child, 
-.third:first-child, 
-.quarter:first-child, 
-.fifth:first-child, 
-.sixth:first-child, 
-.twothird:first-child, 
-.twofifth:first-child, 
-.threefifth:first-child, 
-.fourfifth:first-child, 
+.half:first-child,
+.third:first-child,
+.quarter:first-child,
+.fifth:first-child,
+.sixth:first-child,
+.twothird:first-child,
+.twofifth:first-child,
+.threefifth:first-child,
+.fourfifth:first-child,
 .fivesixth:first-child,
 .threequarter:first-child {
-	margin-left: 0; 
+	margin-left: 0;
 }
 
 .sixth 		  { .column(6); }
-.fifth 		  { .column(5); } 
-.quarter 	  { .column(4); } 
-.third 		  { .column(3); } 
-.half 		  { .column(2); } 
+.fifth 		  { .column(5); }
+.quarter 	  { .column(4); }
+.third 		  { .column(3); }
+.half 		  { .column(2); }
 
 .threequarter { .columns(3, 4); }
 .twothird 	  { .columns(2, 3); }
@@ -65,7 +66,7 @@
 .push-twothird,
 .push-fifth,
 .push-twofifth,
-.push-threefifth, 
+.push-threefifth,
 .push-fourfifth,
 .push-sixth,
 .push-fivesixth {
@@ -87,19 +88,19 @@
 .push-fivesixth    { .columns-push(5, 6); }
 
 
-.split .half, 
-.split .third, 
-.split .quarter, 
-.split .fifth, 
-.split .sixth, 
-.split .twothird, 
-.split .twofifth, 
-.split .threefifth, 
-.split .fourfifth, 
+.split .half,
+.split .third,
+.split .quarter,
+.split .fifth,
+.split .sixth,
+.split .twothird,
+.split .twofifth,
+.split .threefifth,
+.split .fourfifth,
 .split .fivesixth,
 .split .threequarter {
-	margin-left: 0;	
-	
+	margin-left: 0;
+
 }
 
 .split .half         { width: 50%;   }
@@ -143,7 +144,7 @@
 	float: right;
 }
 
-.row .centered { 
-	float: none; 
-	margin: 0 auto; 
+.row .centered {
+	float: none;
+	margin: 0 auto;
 }
