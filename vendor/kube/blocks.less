@@ -1,27 +1,34 @@
 /* =Blocks
 -----------------------------------------------------------------------------*/
-.block-two,
-.block-three,
-.block-four,
-.block-five,
-.block-six {
+.blocks-2,
+.blocks-3,
+.blocks-4,
+.blocks-5,
+.blocks-6 {
+	padding-left: 0;
 	list-style: none;
 	margin-left: -@gridGutterWidth/(@gridWidth/100)*1%;
-	margin-bottom: 0;
+	.box-sizing(border-box);
 	.clearfixing;
 }
-.block-two > li,
-.block-three > li,
-.block-four > li,
-.block-five > li,
-.block-six > li { 
-	height: auto; 
-	float: left; 
+.blocks-2 > li,
+.blocks-3 > li,
+.blocks-4 > li,
+.blocks-5 > li,
+.blocks-6 > li {
+	height: auto;
+	float: left;
 	margin-bottom: @baseLine/@em;
-	margin-left: @gridGutterWidth/(@gridWidth/100)*1%;	
+	margin-left: @gridGutterWidth/(@gridWidth/100)*1%;
+	.box-sizing(border-box);
 }
-.block-two > li   {	.block(2); }
-.block-three > li { .block(3); }
-.block-four > li  { .block(4); }
-.block-five > li  { .block(5); }
-.block-six > li   { .block(6); }
+
+.blocks-2 > li { .block(2); }
+.blocks-3 > li { .block(3); }
+.blocks-4 > li { .block(4); }
+.blocks-5 > li { .block(5); }
+.blocks-6 > li { .block(6); }
+
+.block-first {
+	clear: both;
+}

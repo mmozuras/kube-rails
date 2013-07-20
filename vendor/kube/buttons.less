@@ -1,46 +1,118 @@
-
 .btn {
 	text-decoration: none;
 	color: #000;
 	border-radius: 2px;
-	font-family: 'Helvetica Neue', 'Source Sans Pro', Helvetica, Arial, sans-serif;
-	border: 1px solid #ccc;
-	padding: .5em 1.05em;
+	font-family: @buttonFontFamily;
+	border: 1px solid darken(#fff, 20);
+	border-bottom-color: darken(#fff, 30);
+	line-height: 1;
+	padding: .7em 1.1em .6em 1.1em;
 	font-weight: 500;
 	font-size: .85em;
-	background: #f3f2f2;
-	background: -moz-linear-gradient(top,  #ffffff 0%, #f3f2f2 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f3f2f2));
-	background: -webkit-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
-	background: -o-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
-	background: -ms-linear-gradient(top,  #ffffff 0%,#f3f2f2 100%);
-	background: linear-gradient(to bottom,  #ffffff 0%,#f3f2f2 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f2f2',GradientType=0 );
+	.gradient(darken(#fff, 1), darken(#fff, 12));
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	box-shadow: none;
+	&:hover {
+		color: #000;
+		background: darken(#fff, 12);
+	}
 }
-.btn:hover {
-	background: #fff;
-	border: 1px solid #ddd;
+.btn-black {
+	border-color: #000;
+	.gradient(lighten(#000, 30), #000);
 }
+.btn-red {
+	border-color: darken(#ef6465, 25);
+	border-bottom-color: darken(#ef6465, 35);
+	.gradient(#ef6465, darken(#ef6465, 20));
+}
+.btn-orange {
+	border-color: darken(#f48a30, 15);
+	border-bottom-color: darken(#f48a30, 25);
+	.gradient(#f48a30, darken(#f48a30, 10));
+}
+.btn-green {
+	border-color: darken(#90af45, 18);
+	border-bottom-color: darken(#90af45, 28);
+	.gradient(#90af45, darken(#90af45, 15));
+}
+.btn-blue {
+	border-color: darken(#1c7ab4, 17);
+	border-bottom-color: darken(#1c7ab4, 27);
+	.gradient(#1c7ab4, darken(#1c7ab4, 10));
+}
+.btn-yellow {
+	border-color: darken(#f3c835, 20);
+	border-bottom-color: darken(#f3c835, 30);
+	.gradient(#f3c835, darken(#f3c835, 15));
+}
+.btn-black {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 1);
+}
+.btn-red,
+.btn-orange,
+.btn-green,
+.btn-blue,
+.btn-yellow {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.24);
+}
+.btn-black,
+.btn-red,
+.btn-orange,
+.btn-green,
+.btn-blue,
+.btn-yellow {
+	color: #fff;
+}
+.btn-black:hover,
+.btn-red:hover,
+.btn-orange:hover,
+.btn-green:hover,
+.btn-blue:hover,
+.btn-yellow:hover {
+	color: rgba(255, 255, 255, .8);
+}
+.btn-black:hover {
+	background: #000;
+}
+.btn-red:hover {
+	background: darken(#ef6465, 20);
+}
+.btn-orange:hover {
+	background: darken(#f48a30, 10);
+}
+.btn-green:hover {
+	background: darken(#90af45, 15);
+}
+.btn-blue:hover {
+	background: darken(#1c7ab4, 10);
+}
+.btn-yellow:hover {
+	background: darken(#f3c835, 15);
+}
+
 .btn-small {
 	font-size: .7em;
 }
 .btn-big {
 	font-size: 1.2em;
+	line-height: @baseLine / @em;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
 }
 .btn-round {
 	border-radius: 20px;
 }
-.btn-full {
-	width: 100%;
-}
+
 .btn-active,
 .btn-active:hover,
 .btn.disabled,
-.btn[disabled]
+.btn[disabled],
 .btn-disabled,
 .btn-disabled:hover {
-	background: #e3e3e3;
-	border: 1px solid #ccc;
+	.opacity(100);
+	background: darken(#fff, 18);
+	border: 1px solid darken(#fff, 30);
 	text-shadow: 0 1px 1px #fff;
 }
 .btn-active,
@@ -48,7 +120,7 @@
 	color: #666;
 }
 .btn.disabled,
-.btn[disabled]
+.btn[disabled],
 .btn-disabled,
 .btn-disabled:hover {
 	color: #999;
@@ -58,25 +130,40 @@
 .btn:hover .halflings {
 	color: @colorGrayDark;
 }
+.btn-black:hover .halflings,
+.btn-red:hover .halflings,
+.btn-orange:hover .halflings,
+.btn-green:hover .halflings,
+.btn-blue:hover .halflings,
+.btn-yellow:hover .halflings {
+	color: rgba(255, 255, 255, .8);
+}
+.btn-disabled:hover .halflings {
+	color: #999;
+}
 
 .btn-active .halflings {
 	color: #555;
 }
 
 /* Group  */
+.btn-single,
 .btn-group {
 	display: inline-block;
 	margin-right: 2px;
 	.clearfixing();
 	vertical-align: bottom;
 }
+.btn-single > .btn,
+.btn-single > input,
 .btn-group > .btn,
 .btn-group > input {
 	float: left;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 	border-radius: 0;
 	margin-left: -1px;
+}
+.btn-single > .btn {
+	border-radius: 4px;
 }
 .btn-group > .btn:first-child {
 	border-radius: 4px 0 0 4px;
@@ -92,10 +179,15 @@
 .btn-group > .input-search:last-child {
 	border-radius: 0 15px 15px 0;
 }
-
+.btn-append,
+.btn-group .btn {
+	padding: .7em 1.1em .6em 1.1em;
+}
 
 /* Append  */
 .btn-append {
+	position: relative;
+	top: -1px;
 	margin-left: -2px;
 	border-radius:  0 4px 4px 0;
 }
