@@ -35,4 +35,4 @@ Example:
 
     rails g scaffold Post title:string description:text
     rake db:migrate
-    rails s kube:themed Posts
+    rails g kube:themed Posts
