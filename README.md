@@ -1,6 +1,7 @@
 # Kube for Rails 3.1 Asset Pipeline
 [Kube](http://imperavi.com/kube/) is a minimal CSS-framework for developers. This projects integrates it for Rails 3.1 Asset Pipeline.
 
+[![Code Climate](https://codeclimate.com/github/mmozuras/kube-rails.png)](https://codeclimate.com/github/mmozuras/kube-rails)
 [![Build Status](https://secure.travis-ci.org/mmozuras/kube-rails.png)](http://travis-ci.org/mmozuras/kube-rails)
 [![Dependency Status](https://gemnasium.com/mmozuras/kube-rails.png)](https://gemnasium.com/mmozuras/kube-rails)
 
