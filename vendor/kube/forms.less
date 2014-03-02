@@ -1,63 +1,55 @@
 /* =Forms
 -----------------------------------------------------------------------------*/
-@fieldsBottom: 1.65em;
+.forms {
+	& label {
+		display: block;
+		margin-bottom: @fieldsBottom;
+	}
 
-.forms label {
-	display: block;
-	margin-bottom: @fieldsBottom;
+	& fieldset {
+		padding-bottom: .5em;
+		border-radius: 4px;
+	}
+
+	& input[type="text"],
+	& input[type="password"],
+	& input[type="email"],
+	& input[type="url"],
+	& input[type="phone"],
+	& input[type="tel"],
+	& input[type="number"],
+	& input[type="datetime"],
+	& input[type="date"],
+	& input[type="search"],
+	& input[type="range"],
+	& input[type="file"],
+	& input[type="datetime-local"],
+	& textarea,
+	& select {
+		display: block;
+	}
 }
-.forms input[type="text"],
-.forms input[type="password"],
-.forms input[type="email"],
-.forms input[type="url"],
-.forms input[type="phone"],
-.forms input[type="tel"],
-.forms input[type="number"],
-.forms input[type="datetime"],
-.forms input[type="date"],
-.forms input[type="search"],
-.forms input[type="range"],
-.forms input[type="file"],
-.forms input[type="datetime-local"],
-.forms textarea,
-.forms select,
-.forms button {
-	display: block;
+.forms-inline,
+.forms-inline-list {
+	& input[type="text"],
+	& input[type="password"],
+	& input[type="email"],
+	& input[type="url"],
+	& input[type="phone"],
+	& input[type="tel"],
+	& input[type="number"],
+	& input[type="datetime"],
+	& input[type="date"],
+	& input[type="search"],
+	& input[type="range"],
+	& input[type="file"],
+	& input[type="datetime-local"],
+	& textarea,
+	& select {
+		display: inline-block;
+	}
 }
-.forms-inline input[type="text"],
-.forms-inline input[type="password"],
-.forms-inline input[type="email"],
-.forms-inline input[type="url"],
-.forms-inline input[type="phone"],
-.forms-inline input[type="tel"],
-.forms-inline input[type="number"],
-.forms-inline input[type="datetime"],
-.forms-inline input[type="date"],
-.forms-inline input[type="search"],
-.forms-inline input[type="range"],
-.forms-inline input[type="file"],
-.forms-inline input[type="datetime-local"],
-.forms-inline textarea,
-.forms-inline select,
-.forms-inline button,
-.forms-inline-list input[type="text"],
-.forms-inline-list input[type="password"],
-.forms-inline-list input[type="email"],
-.forms-inline-list input[type="url"],
-.forms-inline-list input[type="phone"],
-.forms-inline-list input[type="tel"],
-.forms-inline-list input[type="number"],
-.forms-inline-list input[type="datetime"],
-.forms-inline-list input[type="date"],
-.forms-inline-list input[type="search"],
-.forms-inline-list input[type="range"],
-.forms-inline-list input[type="file"],
-.forms-inline-list input[type="datetime-local"],
-.forms-inline-list textarea,
-.forms-inline-list select,
-.forms-inline-list button {
-	display: inline-block;
-}
+
 .forms-list,
 .forms-inline-list {
 	margin: 0;
@@ -79,67 +71,9 @@
 }
 .forms-desc {
 	margin-top: 4px;
-	color: @colorGrayLight;
+	color: rgba(0, 0, 0, .4);
 	font-size: @smallFontSize;
 	line-height: 1.4em;
-}
-.forms fieldset {
-	padding-bottom: .5em;
-	border-radius: .5em;
-}
-fieldset.forms-row {
-	padding: 0;
-	border: none;
-	margin-bottom: 0;
-}
-.forms-columnar {
-	.clearfixing();
-}
-.forms-columnar input[type="range"],
-.forms-columnar input[type="file"],
-.forms-columnar select[multiple="multiple"] {
-	display: inline-block;
-}
-.forms-columnar p {
-	position: relative;
-	padding-left: @columnarWidth + @columnarMargin;
-}
-.forms-columnar label  {
-	float: left;
-	width: @columnarWidth;
-	text-align: right;
-	top: 0;
-	left: 0;
-	position: absolute;
-}
-.forms-columnar .forms-list,
-.forms-columnar .forms-inline-list {
-	margin-left: @columnarWidth + @columnarMargin;
-}
-.forms-columnar .forms-list label,
-.forms-columnar .forms-inline-list label {
-	position: static;
-	float: none;
-	width: auto;
-	text-align: left;
-	margin-right: 0;
-}
-.forms-columnar .forms-inline-list label {
-	margin-right: @fieldsBottom;
-}
-.forms-push {
-	position: relative;
-	padding-left: @columnarWidth + @columnarMargin;
-}
-.forms-section {
-	font-weight: bold;
-	border-bottom: 1px solid #eee;
-	padding: 0 0 10px 0;
-	margin-bottom: 1em;
-	line-height: 1;
-}
-.forms-columnar .forms-section {
-	padding-left: @columnarWidth + @columnarMargin;
 }
 
 
@@ -148,7 +82,6 @@ input[type="checkbox"] {
 	position: relative;
 	top: -1px;
 }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -160,20 +93,7 @@ input[type="datetime"],
 input[type="date"],
 input[type="search"],
 input[type="datetime-local"],
-textarea,
-select[multiple="multiple"] {
-	position: relative;
-	z-index: 2;
-	font-family: @inputFontFamily;
-	border: 1px solid #ccc;
-	margin: 0;
-	padding: 3px 2px;
-	background-color: white;
-	color: @colorBody;
-	font-size: 1em;
-	line-height: 1;
-	border-radius: 1px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .1) inset;
+textarea {
 	.transition(border ease .5s);
 }
 input[type="range"] {
@@ -187,10 +107,9 @@ select {
 	margin-bottom: 0 !important;
 }
 
-/* Errors and Success */
+/* States */
 .error,
 .success {
-	margin-left: 5px;
 	font-weight: normal;
 	font-size: @smallFontSize;
 }
@@ -198,15 +117,16 @@ input.input-error,
 textarea.input-error,
 select.input-error,
 .input-error {
-	border-color: #da3e5a;
-	box-shadow: 0 0 0 2px rgba(218, 62, 90, .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+	border-color: @colorRed;
+	box-shadow: 0 0 0 2px rgba(red(@colorRed), green(@colorRed), blue(@colorRed), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
 }
 input.input-success,
 textarea.input-success,
 select.input-success,
 .input-success  {
-	border-color: #18a011 ;
-	box-shadow: 0 0 0 2px rgba(24, 160, 17, .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+	border-color: @colorGreen;
+	box-shadow: 0 0 0 2px rgba(red(@colorGreen), green(@colorGreen), blue(@colorGreen), .3),0 1px 2px rgba(0, 0, 0, .2) inset;
+
 }
 input.input-gray,
 textarea.input-gray,
@@ -230,26 +150,57 @@ input[type="search"] {
 	margin-bottom: 0;
 	border-radius: 15px;
 }
-.input-append,
-.input-prepend {
-	display: inline-block;
+
+/* Append & Prepend */
+.input-groups {
+	display: table !important;
+}
+.input-groups input {
+	width: 100%;
+}
+.input-groups input,
+.input-groups .input-append,
+.input-groups .input-prepend,
+.input-groups .btn-append {
+	display: table-cell !important;
+}
+.input-groups .btn-append,
+.input-groups .input-append,
+.input-groups .input-prepend {
+	width: 1%;
+	vertical-align: middle;
+}
+.input-groups .input-append,
+.input-groups .input-prepend {
 	background-color: #eee;
-	height: 23px;
 	border: 1px solid #ccc;
 	margin: 0;
-	padding: 1px 8px;
-	color: #333;
+	padding: 0;
+	color: @colorBody;
+	line-height: 1;
 	font-size: 1em;
-	line-height: 23px;
+	white-space: nowrap;
 }
-.input-prepend {
-	margin-right: -1px;
+.input-groups .input-prepend {
+	border-right: none;
 }
-.input-append {
+.input-groups .input-append {
 	position: relative;
 	z-index: 1;
-	margin-left: -1px;
+	border-left: none;
+}
+.input-groups .btn-append .btn {
+	display: block;
+	height: auto;
+	border-radius: 0 4px 4px 0;
 }
 
-/* Placeholder */
-.placeholder(@colorGrayLight);
+/* =Mobile (Portrait)
+-----------------------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	.forms-list label {
+		display: inline-block;
+	}
+
+}

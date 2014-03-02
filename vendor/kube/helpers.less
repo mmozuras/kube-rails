@@ -1,27 +1,36 @@
-/* =Goodies
+/* =Helpers
 -----------------------------------------------------------------------------*/
-.first-letter::first-letter {
-	font-size: 4em;
-	line-height: 0.75em;
-	float: left;
-	position: relative;
-	padding-right: 6px;
-	margin-top: -2px;
-	font-weight: normal;
-	color: @colorBody;
-}
-.supersmall {
-	font-size: @superSmallFontSize;
+.group {
+	.clearfix;
 }
 .small {
 	font-size: @smallFontSize;
 }
-.big {
-	font-size: @bigFontSize;
+.nowrap,
+.nowrap td {
+	white-space: nowrap;
 }
-input.big {
-	padding: 2px 0;
-	font-size: @bigFontSize;
+.req,
+.required {
+	font-weight: normal;
+	color: @colorRed;
+}
+.color-gray {
+	color: #777;
+}
+.color-gray-light {
+	color: #999;
+}
+.color-black {
+	color: #000;
+}
+.color-red,
+.error {
+	color: @colorRed;
+}
+.color-green,
+.success {
+	color: @colorGreen;
 }
 .text-centered {
 	text-align: center;
@@ -29,30 +38,14 @@ input.big {
 .text-right {
 	text-align: right;
 }
-.text-uppercase {
-	text-transform: uppercase;
-}
-.nowrap {
-	white-space: nowrap;
-}
-.zero {
-	margin: 0 !important;
-	padding: 0 !important;
-}
-.clear {
-	clear: both;
-}
 .last {
 	margin-right: 0 !important;
 }
 .pause {
-	margin-bottom: 0.75em !important;
+	margin-bottom: @baseLineHeight/2 + 0em !important;
 }
 .end {
 	margin-bottom: 0 !important;
-}
-.handle {
-	cursor: move;
 }
 .normal {
 	font-weight: normal;
@@ -63,28 +56,37 @@ input.big {
 .italic {
 	font-style: italic;
 }
-.req,
-.required {
-	font-weight: normal;
-	color: @colorRed;
+.left {
+	float: left;
 }
-.highlight {
-	background-color: #ffff9e !important;
+.right {
+	float: right;
 }
-.close {
-	padding: 4px 6px;
-	line-height: 1;
-	font-size: 18px;
-	cursor: pointer;
-	color: @colorBlack;
-	text-decoration: none;
-	opacity: 0.4;
 
-	&:before {
-		content: '\00D7';
+
+/* Responsive embedded objects */
+.video-wrapper {
+	height: 0;
+	padding-bottom: 56.25%; // ratio 16:9
+	position: relative;
+	margin-bottom: @baseLineInEms;
+	& iframe,
+	& object,
+	& embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
-	&:hover {
-		color: @colorBlack;
-		opacity: 1;
+}
+
+
+/* =Responsive
+-----------------------------------------------------------------------------*/
+@media only screen and (max-width: 767px) {
+	.left,
+	.right {
+		float: none;
 	}
 }

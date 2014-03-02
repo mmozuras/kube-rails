@@ -1,68 +1,59 @@
 // Font
-@baseFontFamily: 'PT Sans', Arial, "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+@baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @headingsFontFamily: @baseFontFamily;
-@inputFontFamily: @baseFontFamily;
-@buttonFontFamily: @baseFontFamily;
-@codeFontFamily: Consolas, Monaco, monospace, sans-serif;
+@controlsFontFamily: @baseFontFamily;
+@codeFontFamily: Menlo, Monaco, Consolas, "Courier New", monospace;
 
 // Base color
+@backgroundBody: #fff;
 @colorBody: #333;
 @colorHeadings: #222;
-
-// Type
-@baseFontSize: 14;
-@baseLineHeight: 1.65;
-@baseLine: @baseFontSize * @baseLineHeight;
 
 // Grid
 @gridWidth: 1000;
 @gridGutterWidth: 30;
 
-// Misc sizes
-@listsLeft: 2em;
-@columnarWidth: 150px;
-@columnarMargin: 20px;
+// Type
+@baseFontSize: 14;
+@baseLineHeight: 1.6;
+@baseLine: @baseFontSize * @baseLineHeight;
+@baseLineInEms: @baseLine / @em;
 
-// Font sizes
-@bigFontSize: 1.2em;
-@smallFontSize: 0.85em;
-@superSmallFontSize: 0.7em;
+// Heading
+@h1FontSize: @baseFontSize + 22px; // 36px
+@h2FontSize: @baseFontSize + 16px; // 30px
+@h3FontSize: @baseFontSize + 10px; // 24px
+@h4FontSize: @baseFontSize + 4px; // 18px
+@h5FontSize: @baseFontSize + 0px; // 14px
+@h6FontSize: @baseFontSize - 2px; // 12px
 
-// FloatingImages
-@floatingMargin: 1em;
-@floatingBackgroundColor: #fff;
-@floatingPadding: 0;
-@floatingBorder: none;
+@h1SubheadingFontSize: @baseFontSize + 16px; // 30px
+@h2SubheadingFontSize: @baseFontSize + 10px; // 24px
+@h3SubheadingFontSize: @baseFontSize + 4px; // 18px
+@h4SubheadingFontSize: @baseFontSize + 0px; // 14px
+@h5SubheadingFontSize: @baseFontSize - 2px; // 12px
 
-// LinkColor
-@colorLink: #369;
-@colorLinkHover: #ef6465;
+// Font size
+@superSmallFontSize: @baseFontSize - 4px; // 10px
+@smallFontSize: @baseFontSize - 2px; // 12px
+@leadFontSize: @baseFontSize + 4px; // 18px
+@bigFontSize: @baseFontSize + 4px; // 18px
+@quoteFontSize: @baseFontSize + 2px; // 16px
+@buttonsSmallFontSize: @baseFontSize - 3px; // 11px
 
 // Colors
-@colorBlack: #000;
-@colorGrayDark: #555;
-@colorGray: #777;
-@colorGrayLight: #999;
-@colorWhite: #fff;
-@colorRed: #ef6465;
-@colorOrange: #f48a30;
-@colorGreen: #90af45;
-@colorBlue: #1c7ab4;
-@colorYellow: #f3c835;
+@colorBlack: #0f0f0f;
+@colorBlue: #3d58a8;
+@colorRed: #d70a16;
+@colorGreen: #159776;
+@colorYellow: #fddc43;
 
-// BackgroundColor
-@markBackgroundColor: #fe5;
-@codeBackgroundColor: #f5f5f5;
-@tfootBackgroundColor: #f2f2f2;
-@colorStripedTable: #f5f5f5;
-@colorHoveredTable: #f6f6f6;
+// LinkColor
+@colorLink: #3570c3;
+@colorLinkHover: @colorRed;
 
-// Borders
-@cellBorder: 1px solid #eee;
-@cellBorderDark: 1px solid #ddd;
-@fieldsetBorder: 1px solid #e3e3e3;
+// Forms
+@fieldsBottom: 1em;
 
 // Util
-@em: @baseFontSize*1em;	// outputting ems, e.g. 14/@em
-
-
+@em: @baseFontSize * 1em; // outputting ems, e.g. 14 / @em

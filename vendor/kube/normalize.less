@@ -1,5 +1,10 @@
-/* =Reset
+/* =Normalize
 -----------------------------------------------------------------------------*/
+*,
+*:before,
+*:after {
+	.box-sizing(border-box);
+}
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -92,7 +97,6 @@ h6 {
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
-	font-style: normal;
 }
 a:active,
 a:hover {
@@ -131,7 +135,8 @@ audio:not([controls]) {
     height: 0;
 }
 /* To prevent some browsers from inserting quotes on q and p */
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
 blockquote p:before,
@@ -164,7 +169,6 @@ th img,
 td img {
 	vertical-align: top;
 }
-/* Webkit browsers reset margin */
 button,
 input,
 select,
@@ -174,6 +178,7 @@ textarea {
 textarea {
 	overflow: auto;
 	vertical-align: top;
+	resize: vertical;
 }
 /* Normalize buttons in IE */
 button {
@@ -188,28 +193,33 @@ button {
 }
 /* Trick with vertical align for radio and checkbox  */
 input[type="radio"],
-input[type="checkbox"]
-{
+input[type="checkbox"] {
 	font-size: 110%;
-    box-sizing: border-box;
+	position: relative;
+	top: -1px;
 }
 /* Normalize search fields */
 input[type="search"] {
 	-webkit-appearance: textfield;
-	.box-sizing(content-box);
 }
-input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
-/* Horizontal rule reset  */
 hr {
 	display: block;
 	height: 1px;
 	border: 0;
 	border-top: 1px solid #ddd;
 }
-/* Clearfix */
-.group {
-	.clearfixing;
+/* Responsive media */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+img {
+	-ms-interpolation-mode: bicubic;
+}
+audio {
+	width: 100%;
 }
