@@ -66,6 +66,9 @@
 .forms-inline-list li label {
 	margin-right: @fieldsBottom;
 }
+.forms-inline-list li {
+	margin-bottom: 3px;
+}
 .forms-list li {
 	margin-bottom: 6px;
 }
@@ -175,10 +178,10 @@ input[type="search"] {
 	background-color: #eee;
 	border: 1px solid #ccc;
 	margin: 0;
-	padding: 0;
-	color: @colorBody;
+	padding: 0 7px;
+	color: rgba(0, 0, 0, .5);
 	line-height: 1;
-	font-size: 1em;
+	font-size: @smallFontSize;
 	white-space: nowrap;
 }
 .input-groups .input-prepend {
