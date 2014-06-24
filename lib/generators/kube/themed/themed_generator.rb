@@ -5,10 +5,10 @@ module Kube
   module Generators
     class ThemedGenerator < ::Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
-      argument :controller_path,    :type => :string
-      argument :model_name,         :type => :string, :required => false
-      argument :layout,             :type => :string, :default => "application",
-                                    :banner => "Specify application layout"
+      argument :controller_path,    type: :string
+      argument :model_name,         type: :string, required: false
+      argument :layout,             type: :string, default: 'application',
+                                    banner: 'Specify application layout'
 
       def initialize(args, *options)
         super(args, *options)
@@ -28,9 +28,7 @@ module Kube
         @model_name = @model_name.camelize
       end
 
-      def controller_routing_path
-        @controller_routing_path
-      end
+      attr_reader :controller_routing_path
 
       def singular_controller_routing_path
         @controller_routing_path.singularize
@@ -50,13 +48,13 @@ module Kube
 
       def columns
         begin
-          model_columns.collect{ |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type)}
+          model_columns.map { |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type) }
         rescue ActiveRecord::StatementInvalid => e
            say e.message, :red
            exit
         end
       rescue NoMethodError
-        model_fields.collect{ |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type.to_s)}
+        model_fields.map { |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type.to_s) }
       end
 
       def model_columns
@@ -64,12 +62,12 @@ module Kube
       end
 
       def model_fields
-        exclude(@model_name.constantize.fields.collect{ |c| c[1]})
+        exclude(@model_name.constantize.fields.map { |c| c[1] })
       end
 
       def exclude(columns)
-        excluded_column_names = %w[id created_at updated_at]
-        columns.reject{ |c| excluded_column_names.include?(c.name) }
+        excluded_column_names = %w(id created_at updated_at)
+        columns.reject { |c| excluded_column_names.include?(c.name) }
       end
 
       def extract_modules(name)
@@ -83,11 +81,11 @@ module Kube
 
       def generate_views
         views = {
-          "index.html.#{ext}" => File.join('app/views', @controller_file_path, "index.html.#{ext}"),
-          "new.html.#{ext}"   => File.join('app/views', @controller_file_path, "new.html.#{ext}"),
-          "edit.html.#{ext}"  => File.join('app/views', @controller_file_path, "edit.html.#{ext}"),
-          "_form.html.#{ext}" => File.join('app/views', @controller_file_path, "_form.html.#{ext}"),
-          "show.html.#{ext}"  => File.join('app/views', @controller_file_path, "show.html.#{ext}")}
+          "index.html.#{ext}" => view_path("index.html.#{ext}"),
+          "new.html.#{ext}"   => view_path("new.html.#{ext}"),
+          "edit.html.#{ext}"  => view_path("edit.html.#{ext}"),
+          "_form.html.#{ext}" => view_path("_form.html.#{ext}"),
+          "show.html.#{ext}"  => view_path("show.html.#{ext}") }
         selected_views = views
         options.engine == generate_templates(selected_views)
       end
@@ -100,6 +98,10 @@ module Kube
 
       def ext
         ::Rails.application.config.generators.options[:rails][:template_engine] || :erb
+      end
+
+      def view_path(name)
+        File.join('app/views', @controller_file_path, name)
       end
     end
   end
