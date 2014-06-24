@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/**/*'] + Dir['vendor/**/*'] + ['Rakefile', 'README.md']
   s.require_paths = ['lib']
 
-  s.add_dependency 'railties',   '>= 3.1'
-  s.add_dependency 'actionpack', '>= 3.1'
+  s.add_runtime_dependency 'railties', '~> 3.1'
+  s.add_runtime_dependency 'actionpack', '~> 3.1'
 
-  s.add_runtime_dependency 'less-rails', '~> 2.4.0'
-  s.add_development_dependency 'rails', '>= 3.1'
+  s.add_runtime_dependency 'less-rails', '~> 2.4', '>= 2.4.0'
+  s.add_development_dependency 'rails', '~> 3.1'
 end
