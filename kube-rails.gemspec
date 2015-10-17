@@ -21,7 +21,8 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'railties', '~> 4.0'
   s.add_runtime_dependency 'actionpack', '~> 4.0'
-
   s.add_runtime_dependency 'less-rails', '~> 2.7.0'
+  s.add_runtime_dependency 'therubyracer', '~> 0.12.0'
+
   s.add_development_dependency 'rails', '~> 4.0'
 end
