@@ -1,71 +1,43 @@
 /* =Blocks
 -----------------------------------------------------------------------------*/
-.blocks-2,
-.blocks-3,
-.blocks-4,
-.blocks-5,
-.blocks-6 {
-	padding-left: 0;
-	list-style: none;
-	margin-left: -@gridGutterWidth / (@gridWidth / 100) * 1%;
-	.clearfix;
-	& li {
-		height: auto;
-		float: left;
-		margin-bottom: @baseLine / @em;
-		margin-left: @gridGutterWidth / (@gridWidth / 100) * 1%;
+blocks {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-left: -@grid-gap;
+
+	& > div {
+		margin-left: @grid-gap;
+		margin-bottom: @base-line;
 	}
+
+	&[cols="2"] > div { width: 50% - @grid-gap; 	}
+	&[cols="3"] > div { width: 33.3% - @grid-gap; 	}
+	&[cols="4"] > div { width: 25% - @grid-gap; 	}
+	&[cols="5"] > div { width: 20% - @grid-gap; 	}
+	&[cols="6"] > div { width: 16.6% - @grid-gap; 	}
 }
 
-.blocks-2 > li { .block(2); }
-.blocks-3 > li { .block(3); }
-.blocks-4 > li { .block(4); }
-.blocks-5 > li { .block(5); }
-.blocks-6 > li { .block(6); }
+@media (max-width: @breakpoint-small) {
 
-.block-first {
-	clear: both;
-}
+	blocks {
 
-/* =Responsive
------------------------------------------------------------------------------*/
-@media only screen and (max-width: 767px) {
-
-	.blocks-2,
-	.blocks-3,
-	.blocks-4,
-	.blocks-5,
-	.blocks-6 {
+		display: block;
 		margin-left: 0;
-		margin-bottom: @baseLine/@em;
-	}
 
-	.blocks-2 > li,
-	.blocks-3 > li,
-	.blocks-4 > li,
-	.blocks-5 > li,
-	.blocks-6 > li {
-		float: none;
-		margin-left: 0;
-		width: 100%;
+		&[cols="2"] > div,
+		&[cols="3"] > div,
+		&[cols="4"] > div,
+		&[cols="5"] > div,
+		&[cols="6"] > div {
+			width: 100%;
+			margin-left: 0;
+		}
 	}
-
-	.blocks-mobile-50 > li,
-	.blocks-mobile-33 > li {
-		float: left;
-		margin-left: @gridGutterWidth/(@gridWidth/100)*1%;
-	}
-	.blocks-mobile-33,
-	.blocks-mobile-50 {
-		margin-left: -@gridGutterWidth/(@gridWidth/100)*1%;
-	}
-
-	.blocks-mobile-50 > li {
-		.block(2);
-	}
-	.blocks-mobile-33 > li {
-		.block(3);
-	}
-
 
 }

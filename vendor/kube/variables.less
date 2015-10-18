@@ -1,59 +1,141 @@
 // Font
-@baseFontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@headingsFontFamily: @baseFontFamily;
-@controlsFontFamily: @baseFontFamily;
-@codeFontFamily: Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-code: Menlo, Monaco, Consolas, Courier, monospace;
 
-// Base color
-@backgroundBody: #fff;
-@colorBody: #333;
-@colorHeadings: #222;
+// Breakpoints
+@breakpoint-small: 768px;
+@breakpoint-medium: 1024px;
+@breakpoint-large: 1200px;
+
+// Global Radius
+@global-radius: 2px;
+
+// Base Colors
+@background-body: #fff;
+@color-body: #202020;
+@color-headings: #000;
+
+@color-link: #256bc9;
+@color-link-hover: #e21e3b;
+
+// Baseline
+@base-line: 24px; // 24px by default
+@base-line-big: 28px; // 28px by default
+@base-line-small: 20px; // 20px by default
+@base-line-smaller: 16px; // 16px by default
 
 // Grid
-@gridWidth: 1000;
-@gridGutterWidth: 30;
+@grid-columns: 12;
+@grid-width: 1128; // pixels
+@grid-gutter: @base-line;
+@grid-gap: (unit(@grid-gutter)/(@grid-width/100))*1%;
 
-// Type
-@baseFontSize: 14;
-@baseLineHeight: 1.6;
-@baseLine: @baseFontSize * @baseLineHeight;
-@baseLineInEms: @baseLine / @em;
+// Font Size
+@font-size: 15; // 15 (px) default
+@font-size-big: 120%; // 18px or 120% by default
+@font-size-small: 86%; // 13px or 86% by default
+@font-size-smaller: 74%; // 11px or 74%  by default
 
-// Heading
-@h1FontSize: @baseFontSize + 22px; // 36px
-@h2FontSize: @baseFontSize + 16px; // 30px
-@h3FontSize: @baseFontSize + 10px; // 24px
-@h4FontSize: @baseFontSize + 4px; // 18px
-@h5FontSize: @baseFontSize + 0px; // 14px
-@h6FontSize: @baseFontSize - 2px; // 12px
+// Table
+@font-size-table: 94%; // 14px or 94% by default
 
-@h1SubheadingFontSize: @baseFontSize + 16px; // 30px
-@h2SubheadingFontSize: @baseFontSize + 10px; // 24px
-@h3SubheadingFontSize: @baseFontSize + 4px; // 18px
-@h4SubheadingFontSize: @baseFontSize + 0px; // 14px
-@h5SubheadingFontSize: @baseFontSize - 2px; // 12px
+// Form Labels
+@font-size-form-label: 94%; // 14px or 94% by default
 
-// Font size
-@superSmallFontSize: @baseFontSize - 4px; // 10px
-@smallFontSize: @baseFontSize - 2px; // 12px
-@leadFontSize: @baseFontSize + 4px; // 18px
-@bigFontSize: @baseFontSize + 4px; // 18px
-@quoteFontSize: @baseFontSize + 2px; // 16px
-@buttonsSmallFontSize: @baseFontSize - 3px; // 11px
+// Labels & Badges
+@font-size-label: 11px;
 
-// Colors
-@colorBlack: #0f0f0f;
-@colorBlue: #3d58a8;
-@colorRed: #d70a16;
-@colorGreen: #159776;
-@colorYellow: #fddc43;
+// Tools (dropdown, accordion, navigation, pagination, tabs)
+@font-size-tools: 94%; // 14px or 94% by default
 
-// LinkColor
-@colorLink: #3570c3;
-@colorLinkHover: @colorRed;
+// Controls
+@font-size-btn-normal: 1.4rem; // 14px or 94% by default
+@font-size-btn-small: 1.2rem; // 12px or 80% by default
+@font-size-btn-big: 1.8rem; // 18px or 120% by default
+@font-size-btn-upper-normal: 1.1rem; // 11px or 74% by default
+@font-size-btn-upper-small: 1rem; // 10px or 66% by default
+@font-size-btn-upper-big: 1.4rem; // 14px or 94% by default
 
-// Forms
-@fieldsBottom: 1.6em;
+// Headings Size
+@font-size-title: 4.8rem; // 48px by default
+@font-size-h1: 3rem; // 30px
+@font-size-h2: 2.4rem; // 24px
+@font-size-h3: 2rem; // 20px
+@font-size-h4: 1.8rem; // 18px
+@font-size-h5: 1.6rem; // 16px
+@font-size-h6: 1.5rem; // 15px
 
-// Util
-@em: @baseFontSize * 1em; // outputting ems, e.g. 14 / @em
+// Half Margin
+@margin-half: 16px;
+
+// Mark
+@color-mark: #202020;
+@color-mark-background: #ffd61e;
+
+// Dfn
+@color-dfn-border: #202020;
+
+// Pre
+@color-pre-background: rgba(0, 0, 0, .03);
+
+// Code
+@color-code-background: rgba(0, 0, 0, .07);
+
+// Kbd
+@color-kbd: rgba(255, 255, 255, .85);
+@color-kbd-background: #202020;
+
+// Samp
+@color-samp: rgba(255, 255, 255, .95);
+@color-samp-background: #46a9fc;
+
+// Highlighted
+@color-highlighted-background: #f4f4f4;
+
+// Table Colors
+@color-table-stripped: #f8f8f8;
+
+// Controls Height
+@input-height: 40px;
+@input-height-small: 32px;
+@input-height-big: 56px;
+
+// Button Padding
+@padding-btn: 0 32px;
+@padding-btn-outline: 0 31px;
+@padding-btn-small: 0 20px;
+@padding-btn-small-outline: 0 19px;
+@padding-btn-big: 0 48px;
+@padding-btn-big-outline: 0 47px;
+
+// Input Padding
+@padding-input: .9rem 1rem;
+@padding-input-big: 1.5rem 1.2rem;
+@padding-input-small: .7rem 1rem;
+
+// Input Border Style
+@input-border-size: 1px;
+@color-input-background: #fff;
+@color-input-border: #dfdfdf;
+
+// Input Focus
+@color-input-background-focus: #fff;
+@color-input-border-focus: #222;
+
+// Input Color
+@color-input: rgba(0, 0, 0, .85);
+
+// Input Append & Prepend
+@background-input-append: #efefef;
+@color-input-append: rgba(0, 0, 0, .6);
+
+// Fieldset
+@color-fieldset-border: rgba(0, 0, 0, .1);
+@fieldset-border-size: 1px;
+
+// Extra Colors
+@color-default: #e5e5e5;
+@color-primary: #2f77d1;
+@color-success: #0A8754;
+@color-error: #d11149;
+@color-warning: #f4d31e;
