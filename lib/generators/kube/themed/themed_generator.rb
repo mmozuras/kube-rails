@@ -5,10 +5,10 @@ module Kube
   module Generators
     class ThemedGenerator < ::Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
-      argument :controller_path,    type: :string
-      argument :model_name,         type: :string, required: false
-      argument :layout,             type: :string, default: 'application',
-                                    banner: 'Specify application layout'
+      argument :controller_path, type: :string
+      argument :model_name, type: :string, required: false
+      argument :layout, type: :string, default: 'application',
+                        banner: 'Specify application layout'
 
       def initialize(args, *options)
         super(args, *options)
@@ -48,13 +48,17 @@ module Kube
 
       def columns
         begin
-          model_columns.map { |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type) }
+          model_columns.map do |c|
+            ::Rails::Generators::GeneratedAttribute.new(c.name, c.type)
+          end
         rescue ActiveRecord::StatementInvalid => e
-           say e.message, :red
-           exit
+          say e.message, :red
+          exit
         end
       rescue NoMethodError
-        model_fields.map { |c| ::Rails::Generators::GeneratedAttribute.new(c.name, c.type.to_s) }
+        model_fields.map do |c|
+          ::Rails::Generators::GeneratedAttribute.new(c.name, c.type.to_s)
+        end
       end
 
       def model_columns
@@ -72,20 +76,20 @@ module Kube
 
       def extract_modules(name)
         modules = name.include?('/') ? name.split('/') : name.split('::')
-        name    = modules.pop
-        path    = modules.map { |m| m.underscore }
+        name = modules.pop
+        path = modules.map(&:underscore)
         file_path = (path + [name.underscore]).join('/')
-        nesting = modules.map { |m| m.camelize }.join('::')
+        nesting = modules.map(&:camelize).join('::')
         [name, path, file_path, nesting, modules.size]
       end
 
       def generate_views
         views = {
           "index.html.#{ext}" => view_path("index.html.#{ext}"),
-          "new.html.#{ext}"   => view_path("new.html.#{ext}"),
-          "edit.html.#{ext}"  => view_path("edit.html.#{ext}"),
+          "new.html.#{ext}" => view_path("new.html.#{ext}"),
+          "edit.html.#{ext}" => view_path("edit.html.#{ext}"),
           "_form.html.#{ext}" => view_path("_form.html.#{ext}"),
-          "show.html.#{ext}"  => view_path("show.html.#{ext}") }
+          "show.html.#{ext}" => view_path("show.html.#{ext}") }
         selected_views = views
         options.engine == generate_templates(selected_views)
       end
